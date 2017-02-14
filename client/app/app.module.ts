@@ -10,4 +10,4 @@ import { AppComponent } from './app.component';
 
 })
 
-class AppModule {}
+export class AppModule {}
