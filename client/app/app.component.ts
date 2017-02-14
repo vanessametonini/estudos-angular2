@@ -7,4 +7,4 @@ import { Component } from '@angular/core';
     templateUrl: './app/app.component.html' //url do template do meu component
 })
 
-class AppComponent {}
+export class AppComponent {}
