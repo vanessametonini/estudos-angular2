@@ -5,20 +5,18 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-//importa um decorator que transforma a classe num component
 var core_1 = require("@angular/core");
-//nessa anotação eu configuro meu component
-var AppComponent = (function () {
-    function AppComponent() {
+var foto_component_1 = require("./foto.component");
+var FotoModule = (function () {
+    function FotoModule() {
     }
-    return AppComponent;
+    return FotoModule;
 }());
-AppComponent = __decorate([
-    core_1.Component({
-        moduleId: module.id,
-        selector: 'app',
-        templateUrl: './app.component.html' //url do template do meu component
+FotoModule = __decorate([
+    core_1.NgModule({
+        declarations: [foto_component_1.FotoComponent],
+        exports: [foto_component_1.FotoComponent]
     })
-], AppComponent);
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+], FotoModule);
+exports.FotoModule = FotoModule;
+//# sourceMappingURL=foto.module.js.map
