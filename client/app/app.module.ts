@@ -8,11 +8,12 @@ import { PainelModule } from './painel/painel.module';
 
 import { CadastroComponent } from './cadastro/cadastro.component';
 import { ListagemComponent } from './listagem/listagem.component';
+import { routing } from './app.routes';
 
 
 //transforma minha classe em um módulo do angular
 @NgModule({
-    imports: [ BrowserModule, FotoModule, HttpModule, PainelModule ], //como minha app vai rodar no navegador importo o modulo de browser
+    imports: [ BrowserModule, FotoModule, HttpModule, PainelModule, routing ], //como minha app vai rodar no navegador importo o modulo de browser
     declarations: [ AppComponent, ListagemComponent, CadastroComponent ],
     bootstrap: [ AppComponent ] //com qual component quero quer inicie minha aplicacao
 })
