@@ -25,7 +25,6 @@ export class AppComponent {
 
         //v1
         // let stream = http.get('v1/fotos');
-
         // stream.subscribe(res => {
         //     this.fotos = res.json();
         //     console.log(this.fotos);
