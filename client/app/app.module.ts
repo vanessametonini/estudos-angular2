@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { FotoModule } from './foto/foto.module';
 import { HttpModule } from '@angular/http';
+import 'rxjs/add/operator/map';
 
 //transforma minha classe em um módulo do angular
 @NgModule({

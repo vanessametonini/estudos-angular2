@@ -11,7 +11,36 @@ import { Http } from '@angular/http';
 
 export class AppComponent {
 
+    fotos: Object[] = [];
+
     constructor(http: Http){
 
+        //v4
+        http.get('v1/fotos')
+            .map(res => res.json())
+            .subscribe(
+                fotos => this.fotos = fotos,
+                erro => console.log(erro)
+            );
+
+        //v1
+        // let stream = http.get('v1/fotos');
+
+        // stream.subscribe(res => {
+        //     this.fotos = res.json();
+        //     console.log(this.fotos);
+        // });
+
+        //v2
+        // http.get('v1/fotos')
+        //     .map(res => res.json())
+        //     .subscribe(fotos => {
+        //         this.fotos = fotos
+        //     });
+
+        //v3
+        //  http.get('v1/fotos')
+        //     .map(res => res.json())
+        //     .subscribe(fotos => this.fotos = fotos);
     }
 }

@@ -14,6 +14,28 @@ var http_1 = require("@angular/http");
 //nessa anotação eu configuro meu component
 var AppComponent = (function () {
     function AppComponent(http) {
+        var _this = this;
+        this.fotos = [];
+        //v4
+        http.get('v1/fotos')
+            .map(function (res) { return res.json(); })
+            .subscribe(function (fotos) { return _this.fotos = fotos; }, function (erro) { return console.log(erro); });
+        //v1
+        // let stream = http.get('v1/fotos');
+        // stream.subscribe(res => {
+        //     this.fotos = res.json();
+        //     console.log(this.fotos);
+        // });
+        //v2
+        // http.get('v1/fotos')
+        //     .map(res => res.json())
+        //     .subscribe(fotos => {
+        //         this.fotos = fotos
+        //     });
+        //v3
+        //  http.get('v1/fotos')
+        //     .map(res => res.json())
+        //     .subscribe(fotos => this.fotos = fotos);
     }
     return AppComponent;
 }());
