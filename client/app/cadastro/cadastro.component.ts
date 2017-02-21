@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
+import { Http, Headers} from '@angular/http';
 import { FotoComponent } from '../foto/foto.component';
+
 
 @Component({
     moduleId: module.id,
@@ -10,15 +12,23 @@ import { FotoComponent } from '../foto/foto.component';
 export class CadastroComponent {
     
     foto: FotoComponent = new FotoComponent();
+    http: Http;
     
-    // constructor(){
-    //     this.foto.descricao = 'A';
-    //     this.foto.url = 'B';
-    //     this.foto.titulo = 'C';
-    // }
+    constructor(http: Http){
+        this.http = http;
+    }
 
     cadastrar(event: Event) {
-        event.preventDefault();
+        // event.preventDefault();
         console.log(this.foto);
+
+        var headers = new Headers();
+        headers.append('Content-Type', 'application/json');
+
+        this.http.post('v1/fotos', JSON.stringify(this.foto), { headers: headers})
+                .subscribe(() => {
+                    this.foto = new FotoComponent();
+                    console.log("Foto salva com sucesso");
+                }, erro => console.log(erro));
     }
 }
