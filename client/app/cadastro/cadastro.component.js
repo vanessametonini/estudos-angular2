@@ -6,9 +6,20 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 var core_1 = require("@angular/core");
+var foto_component_1 = require("../foto/foto.component");
 var CadastroComponent = (function () {
     function CadastroComponent() {
+        this.foto = new foto_component_1.FotoComponent();
     }
+    // constructor(){
+    //     this.foto.descricao = 'A';
+    //     this.foto.url = 'B';
+    //     this.foto.titulo = 'C';
+    // }
+    CadastroComponent.prototype.cadastrar = function (event) {
+        event.preventDefault();
+        console.log(this.foto);
+    };
     return CadastroComponent;
 }());
 CadastroComponent = __decorate([

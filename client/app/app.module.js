@@ -9,6 +9,7 @@ require("rxjs/add/operator/map");
 var core_1 = require("@angular/core");
 var platform_browser_1 = require("@angular/platform-browser");
 var http_1 = require("@angular/http");
+var forms_1 = require("@angular/forms");
 var app_component_1 = require("./app.component");
 var foto_module_1 = require("./foto/foto.module");
 var painel_module_1 = require("./painel/painel.module");
@@ -23,7 +24,14 @@ var AppModule = (function () {
 }());
 AppModule = __decorate([
     core_1.NgModule({
-        imports: [platform_browser_1.BrowserModule, foto_module_1.FotoModule, http_1.HttpModule, painel_module_1.PainelModule, app_routes_1.routing],
+        imports: [
+            platform_browser_1.BrowserModule,
+            foto_module_1.FotoModule,
+            http_1.HttpModule,
+            painel_module_1.PainelModule,
+            app_routes_1.routing,
+            forms_1.FormsModule
+        ],
         declarations: [app_component_1.AppComponent, listagem_component_1.ListagemComponent, cadastro_component_1.CadastroComponent],
         bootstrap: [app_component_1.AppComponent] //com qual component quero quer inicie minha aplicacao
     })
