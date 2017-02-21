@@ -9,7 +9,7 @@ import { Component, Input } from '@angular/core';
 
 export class FotoComponent {
 
-    //o input habilita a entrada de dados
+    //o @Input habilita a entrada de dados
     @Input() titulo: string;
     @Input() url: string;
     descricao: string;
