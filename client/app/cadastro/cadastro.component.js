@@ -18,7 +18,7 @@ var CadastroComponent = (function () {
     }
     CadastroComponent.prototype.cadastrar = function (event) {
         var _this = this;
-        // event.preventDefault();
+        event.preventDefault();
         console.log(this.foto);
         var headers = new http_1.Headers();
         headers.append('Content-Type', 'application/json');

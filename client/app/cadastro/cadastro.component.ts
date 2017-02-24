@@ -19,7 +19,7 @@ export class CadastroComponent {
     }
 
     cadastrar(event: Event) {
-        // event.preventDefault();
+        event.preventDefault();
         console.log(this.foto);
 
         var headers = new Headers();
