@@ -9,7 +9,7 @@ export class FotoService {
 
     http: Http;
     headers: Headers;
-    url: string = 'fotos/v1';
+    url: string = 'v1/fotos';
 
     constructor( http: Http){
 
