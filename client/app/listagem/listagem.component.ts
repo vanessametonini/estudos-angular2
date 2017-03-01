@@ -1,6 +1,8 @@
 //importa um decorator que transforma a classe num component
 import { Component } from '@angular/core';
 import { Http } from '@angular/http';
+import { FotoComponent } from '../foto/foto.component';
+import { FotoService } from '../foto/foto.service';
 
 //nessa anotação eu configuro meu component
 @Component({
@@ -11,15 +13,13 @@ import { Http } from '@angular/http';
 
 export class ListagemComponent {
 
-    fotos: Object[] = [];
+    fotos: FotoComponent[] = [];
 
-    constructor(http: Http){
+    constructor(service: FotoService){
 
-        http.get('v1/fotos')
-            .map(res => res.json())
-            .subscribe(
-                fotos => this.fotos = fotos,
-                erro => console.log(erro)
-            );
+        service.lista().subscribe(
+                    fotos => this.fotos = fotos,
+                    erro => console.log(erro)
+                );
     }
 }

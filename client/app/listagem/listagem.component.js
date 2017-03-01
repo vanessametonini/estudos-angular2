@@ -10,15 +10,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 //importa um decorator que transforma a classe num component
 var core_1 = require("@angular/core");
-var http_1 = require("@angular/http");
+var foto_service_1 = require("../foto/foto.service");
 //nessa anotação eu configuro meu component
 var ListagemComponent = (function () {
-    function ListagemComponent(http) {
+    function ListagemComponent(service) {
         var _this = this;
         this.fotos = [];
-        http.get('v1/fotos')
-            .map(function (res) { return res.json(); })
-            .subscribe(function (fotos) { return _this.fotos = fotos; }, function (erro) { return console.log(erro); });
+        service.lista().subscribe(function (fotos) { return _this.fotos = fotos; }, function (erro) { return console.log(erro); });
     }
     return ListagemComponent;
 }());
@@ -28,7 +26,7 @@ ListagemComponent = __decorate([
         selector: 'listagem',
         templateUrl: './listagem.component.html' //url do template do meu component
     }),
-    __metadata("design:paramtypes", [http_1.Http])
+    __metadata("design:paramtypes", [foto_service_1.FotoService])
 ], ListagemComponent);
 exports.ListagemComponent = ListagemComponent;
 //# sourceMappingURL=listagem.component.js.map

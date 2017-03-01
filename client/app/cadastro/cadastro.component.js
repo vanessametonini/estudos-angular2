@@ -9,13 +9,14 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
-var http_1 = require("@angular/http");
+//import { Http, Headers} from '@angular/http';
 var foto_component_1 = require("../foto/foto.component");
 var forms_1 = require("@angular/forms");
+var foto_service_1 = require("../foto/foto.service");
 var CadastroComponent = (function () {
-    function CadastroComponent(http, fb) {
+    function CadastroComponent(service, fb) {
         this.foto = new foto_component_1.FotoComponent();
-        this.http = http;
+        this.service = service;
         this.meuForm = fb.group({
             titulo: ['', forms_1.Validators.compose([forms_1.Validators.required, forms_1.Validators.minLength(4)])],
             url: ['', forms_1.Validators.required],
@@ -26,13 +27,13 @@ var CadastroComponent = (function () {
         var _this = this;
         event.preventDefault();
         console.log(this.foto);
-        var headers = new http_1.Headers();
-        headers.append('Content-Type', 'application/json');
-        this.http.post('v1/fotos', JSON.stringify(this.foto), { headers: headers })
+        this.service.cadastra(this.foto)
             .subscribe(function () {
             _this.foto = new foto_component_1.FotoComponent();
-            console.log("Foto salva com sucesso");
-        }, function (erro) { return console.log(erro); });
+            console.log('Foto salva com sucesso');
+        }, function (erro) {
+            console.log(erro);
+        });
     };
     return CadastroComponent;
 }());
@@ -42,7 +43,7 @@ CadastroComponent = __decorate([
         selector: 'cadastro',
         templateUrl: './cadastro.component.html'
     }),
-    __metadata("design:paramtypes", [http_1.Http, forms_1.FormBuilder])
+    __metadata("design:paramtypes", [foto_service_1.FotoService, forms_1.FormBuilder])
 ], CadastroComponent);
 exports.CadastroComponent = CadastroComponent;
 //# sourceMappingURL=cadastro.component.js.map
