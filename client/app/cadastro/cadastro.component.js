@@ -40,11 +40,14 @@ var CadastroComponent = (function () {
         event.preventDefault();
         console.log(this.foto);
         this.service.cadastra(this.foto)
-            .subscribe(function () {
+            .subscribe(function (res) {
+            _this.mensagem = res.mensagem;
             _this.foto = new foto_component_1.FotoComponent();
-            _this.router.navigate(['']);
+            if (!res.inclusao)
+                _this.router.navigate(['']);
         }, function (erro) {
             console.log(erro);
+            _this.mensagem = 'Não foi possível savar a foto';
         });
     };
     return CadastroComponent;
