@@ -13,6 +13,7 @@ var forms_1 = require("@angular/forms");
 var app_component_1 = require("./app.component");
 var foto_module_1 = require("./foto/foto.module");
 var painel_module_1 = require("./painel/painel.module");
+var botao_module_1 = require("./botao/botao.module");
 var cadastro_component_1 = require("./cadastro/cadastro.component");
 var listagem_component_1 = require("./listagem/listagem.component");
 var app_routes_1 = require("./app.routes");
@@ -31,7 +32,8 @@ AppModule = __decorate([
             painel_module_1.PainelModule,
             app_routes_1.routing,
             forms_1.FormsModule,
-            forms_1.ReactiveFormsModule
+            forms_1.ReactiveFormsModule,
+            botao_module_1.botaoModule
         ],
         declarations: [app_component_1.AppComponent, listagem_component_1.ListagemComponent, cadastro_component_1.CadastroComponent],
         bootstrap: [app_component_1.AppComponent] //com qual component quero quer inicie minha aplicacao

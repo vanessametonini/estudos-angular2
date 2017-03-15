@@ -7,6 +7,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { FotoModule } from './foto/foto.module';
 import { PainelModule } from './painel/painel.module';
+import { botaoModule } from './botao/botao.module';
 
 import { CadastroComponent } from './cadastro/cadastro.component';
 import { ListagemComponent } from './listagem/listagem.component';
@@ -22,7 +23,8 @@ import { routing } from './app.routes';
         PainelModule,
         routing,
         FormsModule,
-        ReactiveFormsModule ], //como minha app vai rodar no navegador importo o modulo de browser
+        ReactiveFormsModule,
+        botaoModule ], //como minha app vai rodar no navegador importo o modulo de browser
     declarations: [ AppComponent, ListagemComponent, CadastroComponent ],
     bootstrap: [ AppComponent ] //com qual component quero quer inicie minha aplicacao
 })
