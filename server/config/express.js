@@ -2,7 +2,11 @@ var express = require('express')
     ,app = express()
     ,bodyParser = require('body-parser')
     ,routes = require('../app/routes')
-    ,path =  require('path');
+    ,path =  require('path')
+    ,cors = require('cors');
+
+
+app.use(cors())
 
 app.set('clientPath', path.join(__dirname, '../..', 'client'));
 console.log(app.get('clientPath'));
